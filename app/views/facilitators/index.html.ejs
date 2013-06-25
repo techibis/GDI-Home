@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Facilitators</h2>
+  <%- linkTo('Create a new Facilitator', addFacilitatorPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="facilitators-list">
+<% if (facilitators) { %>
+<% for (var i = 0, ii = facilitators.length; i < ii; i++) { %>
+  <div class="row list-item" id="facilitator-<%= facilitators[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(facilitators[i].name, facilitatorPath(facilitators[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= facilitators[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

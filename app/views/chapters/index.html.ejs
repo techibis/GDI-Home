@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Chapters</h2>
+  <%- linkTo('Create a new Chapter', addChapterPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="chapters-list">
+<% if (chapters) { %>
+<% for (var i = 0, ii = chapters.length; i < ii; i++) { %>
+  <div class="row list-item" id="chapter-<%= chapters[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(chapters[i].name, chapterPath(chapters[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= chapters[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
